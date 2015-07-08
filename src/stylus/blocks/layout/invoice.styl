@@ -1,0 +1,54 @@
+.invoice
+  fixed left top
+  background rgba(207, 207, 207, 0.4)
+  size(100%)
+  display none
+  z-index 50
+
+  &-wrapper
+    display table
+    size(100%)
+
+  &-holder
+    size(100%)
+    display table-cell
+    vertical-align middle
+    text-align center
+
+  &__popup
+    background white
+    width 550px
+    display inline-block
+
+    &-header
+      background $blue
+      color white
+      font-size 30px
+      height 70px
+      line-height 69px
+
+    &-content
+      padding 30px
+      text-align left
+
+    &__field
+      background #FFFFFF
+      size(490px, 30px)
+      margin-bottom 15px
+      line-height 29px
+      border 1px solid $blue
+      box-sizing border-box
+      padding 0 10px
+
+      &-textarea
+        height 150px
+        line-height 20px
+
+    &-actions
+      text-align center
+
+      & .blue
+        margin-right 20px
+
+  .app-popup &
+    display block

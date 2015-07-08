@@ -1,0 +1,33 @@
+.page
+  margin 0
+
+  &__cover
+    margin 0
+    size(100%, 250px)
+    background no-repeat center
+
+    &-overlay
+      margin 0
+      size(100%)
+      background rgba(0,0,0,0.5)
+
+  &__title
+    color white
+    font-size 36px
+    display table-cell
+    vertical-align middle
+    height 100%
+
+    &-wrapper
+      display table
+      height 100%
+
+@media screen and (max-width $screenL)
+  .page
+    &__cover
+      height 220px
+
+@media screen and (max-width $screenXS)
+  .page
+    &__cover
+      height 200px

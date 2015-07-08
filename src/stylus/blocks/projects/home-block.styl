@@ -1,0 +1,57 @@
+.home-projects
+  width 100%
+  margin-top 60px
+
+  &__gallery
+    overflow hidden
+    margin 0
+
+    &-item
+      relative()
+      margin 0
+      size(250px, 160px)
+      float left
+      overflow hidden
+      transition all 300ms ease 0s
+
+      &.hidden
+        display block
+        width 0
+        opacity 0
+
+      &__image
+        absolute left 0 top 0
+        size(250px, 160px)
+
+      &__description
+        absolute left -250px top 0
+        background rgba(0,0,0,0.55)
+        color white
+        transition all 300ms ease-in 100ms
+        font-size 14px
+        text-align center
+        box-sizing border-box
+        size(100%)
+        padding 15px
+
+        &-title
+          color $orange
+          font-weight 700
+          margin-bottom 5px
+          font-size 16px
+
+        &-text
+          margin-bottom 8px
+          line-height 16px
+          font-weight 300
+
+        & .button
+          height 30px
+          line-height 29px
+
+          &:hover
+            color white !important
+            border-color white !important
+
+      &:hover &__description
+        left 0

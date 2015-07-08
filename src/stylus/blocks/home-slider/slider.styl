@@ -1,0 +1,59 @@
+.home-slider
+  size(100%, 770px)
+  margin 0
+  relative()
+  overflow hidden
+
+  &__image
+    size(100%)
+    background no-repeat center / auto 100%
+    absolute left 0 top 0
+    opacity 0
+    transition opacity 700ms ease 0s
+
+    &.active
+      opacity 1
+
+  &__text
+    absolute left -1000px top -1000px
+    width 400px
+    height auto
+    max-height 250px
+    background rgba(256, 256, 256, 0.8)
+    margin 0 0 0 -500px
+    box-sizing border-box
+    padding 20px
+    border 5px solid rgba(256, 256, 256, 0.45)
+    transition all 800ms ease-out 0s
+
+    &.visible
+      left 50%
+      top 100px
+
+    &-title
+      color $orange
+      font-size 18px
+      margin-bottom 10px
+
+    &-descripton
+      font-size 15px
+
+@media screen and (max-width: $screenXL)
+  .home-slider
+    height 760px
+
+@media screen and (max-width: $screenL)
+  .home-slider
+    height 745px
+
+@media screen and (max-width: $screenS)
+  .home-slider
+    height 645px
+
+@media screen and (max-width: $screenM)
+  .home-slider
+    height 645px
+
+@media screen and (max-width: $screenXS)
+  .home-slider
+    height 515px

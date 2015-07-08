@@ -1,0 +1,39 @@
+.button
+  height 35px
+  display inline-block
+  box-sizing border-box
+  padding 0 15px
+  line-height 33px
+  background transparent
+  border 1px solid
+  text-decoration none
+  font-family "Prosto One", Helvetica, Arial, sans-serif
+  transition all 300ms ease 40ms
+  font-size 13px
+  cursor pointer
+
+  &.orange
+    border-color $orange
+    color $orange
+
+    &:hover
+      border-color $blue
+      color $blue
+
+  &.blue
+    border-color $blue
+    color $blue
+
+    &:hover
+      border-color $orange
+      color $orange
+
+  &.disabled
+    border-color #ccc
+    color #ccc
+    cursor default
+
+    &:hover
+      border-color #ccc
+      color #ccc
+      cursor default

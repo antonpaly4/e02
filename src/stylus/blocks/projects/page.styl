@@ -1,0 +1,119 @@
+.projects
+
+  &-cover
+    background-image url("../img/layout/sl-station-hd.jpg");
+
+  &__header
+    height 80px
+    background $blue
+
+    &-content
+      position relative
+
+    &-title
+      absolute left 0 top 30px
+      size(310px, 70px)
+      background $orange
+      line-height 69px
+      font-size 20px
+      display block
+      text-align center
+      color white
+      text-transform uppercase
+      font-family "Prosto One", Helvetica, Arial, sans-serif
+      transition all 300ms ease 40ms
+
+    &__menu
+      height 40px
+      absolute left 310px top 80px
+
+      &-item
+        float left
+        box-sizing border-box
+
+        &__link
+          display block
+          padding 0 15px
+          line-height 39px
+          height 40px
+          color $lightGray
+          text-transform uppercase
+          transition all 300ms ease 40ms
+
+          &.active
+            background $blue
+            color white
+
+            &:hover
+              cursor default
+              background $blue
+              color white
+
+          &:hover
+            background $orange
+            color white
+            cursor pointer
+
+  &__list
+    margin-top 100px
+
+  &__item
+    size(100%, 350px)
+    margin-bottom 50px
+    position relative
+    overflow hidden
+    background no-repeat center
+    transition all 400ms ease 40ms
+
+    &.hidden
+      height 0
+
+    &:after
+      absolute left -130% top 0
+      size(150%)
+      background rgba(256,256,256,0.3)
+      transition all 500ms ease 30ms
+      transform rotate(40deg)
+      content ""
+
+    &:hover:after
+      left 70%
+
+    &-desc_left:after
+      left 100%
+
+    &-desc_left:hover:after
+      left -100%
+
+    &__description
+      background rgba(0,0,0,0.65)
+      color #FFFFFF
+      size(50%, 100%)
+      box-sizing border-box
+      padding 20px
+      absolute right 0 top 0
+
+      &-title
+        color $orange
+        font-size 17px
+        padding-bottom 10px
+        border-bottom solid 1px $orange
+
+      &-text
+        margin 15px 0
+        font-weight 300
+
+      & .button
+        absolute left 20px bottom 20px
+
+        &:hover
+          border-color white
+          color white
+
+    &-desc_left &__description
+      absolute left 0
+      text-align right
+
+      & .button
+        absolute right 20px
+        left auto

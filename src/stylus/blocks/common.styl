@@ -1,0 +1,61 @@
+global-reset();
+
+body
+  font-family "Roboto Condensed", Arial, Helvetica, Sans-serif
+  font-size 15px
+  line-height 1.5em
+  font-weight 400
+  background #ffffff
+  color #525252
+
+a
+  color $orange
+  text-decoration none
+
+  &:hover
+    text-decoration none
+    color $blue
+
+//h1, h2, h3, h4
+//  font-family "Prosto One", Helvetica, Arial, sans-serif
+
+.wrapper
+  width 1000px
+  margin 0 auto
+
+.content
+  margin-top 70px
+
+.columns
+  overflow hidden
+  margin-bottom 30px
+
+.column
+  float left
+  box-sizing border-box
+
+  &-s
+    width 310px
+    margin-right 35px
+
+    &:nth-child(3)
+      margin-right 0
+
+  &-m
+    width 480px
+    margin-right 40px
+
+    &:ntn-child(2)
+      margin-right 0
+
+.pull-right
+  float right
+  margin-left 15px
+
+.hidden
+  display none
+
+.app-popup
+
+  & .app-holder
+    filter blur(1.5px)
