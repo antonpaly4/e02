@@ -4,6 +4,39 @@ var React = require('react')
 var Validator = require('../validator')
   , Uploader = require('../uploader/uploader');
 
+var Select = require('../ui/forms/select.jsx');
+
+var jobTypes = [
+  {
+    name: 'key',
+    title: 'Под ключ'
+  },
+  {
+    name: 'projects',
+    title: 'Проектирование'
+  },
+  {
+    name: 'smartgrid',
+    title: 'Smart Grid'
+  },
+  {
+    name: 'inspection',
+    title: 'Техническое обследование зданий и сооружений'
+  },
+  {
+    name: 'author',
+    title: 'Авторский надзор'
+  },
+  {
+    name: 'construction',
+    title: 'Строительно-монтажные и пуско-наладочные работы'
+  },
+  {
+    name: 'expert',
+    title: 'Экспертная оценка'
+  }
+];
+
 module.exports = React.createClass({
   getInitialState: function(){
     return {
@@ -23,9 +56,8 @@ module.exports = React.createClass({
       , self = this
       , uploaded = [];
 
-    console.log(files);
     var file = Uploader.addFiles(files);
-    console.log(file);
+
     for(var key in file){
       if(file[key].valid){
         uploaded.push(file[key].name);
@@ -45,6 +77,9 @@ module.exports = React.createClass({
     else{
       e.preventDefault();
     }
+  },
+  changeType: function(type){
+    console.log(type);
   },
   changeDescr: function(e){
     var text = e.target.value;
@@ -140,6 +175,7 @@ module.exports = React.createClass({
           <input type="file" multiple="true" className={imageEditClass} ref="image" onChange={this.addImages}/>
           <div className="clear" />
           <input type="text" className="form__field" value={this.state.title} placeholder="Название объекта" onInput={this.changeTitle} onChange={this.changeTitle}/>
+          <Select selected={this.state.type} items={jobTypes} selectItem={this.changeType}/>
           <textarea className="form__field form__field-textarea" placeholder="Короткое описание для блока на главной" value={this.state.text} onInput={this.changeDescr} onChange={this.changeDescr} />
           <span className="button orange inline" onClick={this.save}>Сохранить</span>
           <span className="button blue inline" onClick={this.save}>Отменить</span>
